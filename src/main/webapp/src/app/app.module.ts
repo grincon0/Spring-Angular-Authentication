@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { LogoutComponent } from './logout/logout.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthenticateHttpInterceptorService } from './services/authenticate-http-interceptor.service';
 
 
@@ -35,8 +35,12 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
+  exports: [RouterModule],
+
   providers: [
     {  
       provide:HTTP_INTERCEPTORS, useClass:AuthenticateHttpInterceptorService, multi:true 
