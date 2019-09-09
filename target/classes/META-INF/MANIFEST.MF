@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-auth
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: grincon
+Implementation-Vendor-Id: com.georgerincon
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-auth
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,16 @@
+<div>
+    <h2>Register</h2>
+    <span>Username : </span><input type="text" name="username" [(ngModel)]="username">
+
+    <span>Password :</span><input type="password" name="password" [(ngModel)]="password">
+    <span>Password Confirmation</span><input type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm">
+
+    <span>Security Question 1</span>
+    <input type="text" name="securityOne" [(ngModel)]="securityQuestionOne">
+
+    <span>Security Question 2</span>
+    <input type="text" name="securityTwo" [(ngModel)]="securityQuestionTwo">
+    <button (click)=submitRegistration() class="btn btn-success">
+        Register
+    </button>
+</div>
