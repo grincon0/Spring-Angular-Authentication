@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterContentChecked } from '@angular/core';
 import {RegisterData} from '../models/register-data.model';
 import {AuthenticationService} from '../services/authentication.service';
 
@@ -7,10 +7,10 @@ import {AuthenticationService} from '../services/authentication.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit, OnChanges {
+export class RegisterComponent implements OnInit, OnChanges, AfterContentChecked {
 
   userRegistration:RegisterData;
-  passwordConfirmation:String
+  passwordConfirm:String
   isPasswordConfirmed:Boolean;
 
   constructor(private auth:AuthenticationService) { }
@@ -20,8 +20,14 @@ export class RegisterComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(){
+   
+    console.log('running');
+  }
+  ngAfterContentChecked(){
+    console.log('checked');
     this.comparePasswords();
   }
+
 
   submitRegistration(userRegistration : RegisterData){
     //TODO: intergrate auth
@@ -34,7 +40,7 @@ export class RegisterComponent implements OnInit, OnChanges {
   }
 
   comparePasswords(){
-    if(this.userRegistration.password !== this.passwordConfirmation){
+    if(this.userRegistration.password !== this.passwordConfirm){
       this.isPasswordConfirmed = false;
     }else{
       this.isPasswordConfirmed = true;

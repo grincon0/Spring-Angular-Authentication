@@ -1,16 +1,29 @@
 <div>
     <h2>Register</h2>
-    <span>Username : </span><input type="text" name="username" [(ngModel)]="userRegistration.username">
 
-    <span>Password :</span><input type="password" name="password" [(ngModel)]="userRegistration.password">
-    <span>Password Confirmation</span><input type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm">
+
+
+    <span>Username </span>
+    <input class="form-control form-padding" type="text" name="username" [(ngModel)]="userRegistration.username">
+
+
+
+
+    <span>Password </span>
+    <input class="form-control form-padding" type="password" name="password" [(ngModel)]="userRegistration.password">
+
+
+
+    <span>Password Confirmation</span>
+    <input class="form-control" type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm">
+
     <p *ngIf="!isPasswordConfirmed" style="color: red">Passwords do not match!</p>
 
     <span>Security Question</span>
-    <input class="form-control" type="text" name="securityQuestion" [(ngModel)]="userRegistration.securityQuestion">
+    <input class="form-control form-padding" type="text" name="securityQuestion" [(ngModel)]="userRegistration.securityQuestion">
 
     <span>Security Answer</span>
-    <input class="form-control" type="text" name="securityAnswer" [(ngModel)]="userRegistration.securityAnswer">
+    <input class="form-control form-padding" type="text" name="securityAnswer" [(ngModel)]="userRegistration.securityAnswer">
 
     <button (click)=submitRegistration() class="btn btn-primary">
         Register

@@ -17,6 +17,8 @@ import { AuthenticateHttpInterceptorService } from './services/authenticate-http
 
 
 const appRoutes: Routes = [
+  //temp for testing
+  {path: '', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'home', component:WelcomeComponent},
